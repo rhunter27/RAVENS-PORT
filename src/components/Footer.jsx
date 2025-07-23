@@ -7,13 +7,13 @@ export default function Footer() {
   const socialLinks = [
     {
       name: 'GitHub',
-      url: 'https://github.com/yourusername',
+      url: 'https://github.com/rhunter27',
       icon: <FaGithub />,
       color: 'var(--accent-primary)', // Soft purple
     },
     {
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/yourusername',
+      url: 'https://www.linkedin.com/in/raven-hunter272727/',
       icon: <FaLinkedin />,
       color: 'var(--accent-secondary)', // Light pink
     },

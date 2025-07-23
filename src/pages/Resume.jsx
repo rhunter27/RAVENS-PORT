@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTheme } from '../context/ThemeContext';
 import '../global.css';
-import resumePDF from '../assets/Raven_Hunter_-_Full_Stack_Web_Developer.pdf';
-import coverLetterPDF from '../assets/Raven_Hunter_-_Cover_Letter-2.pdf'; // <-- added cover letter import
+import resumePDF from '../assets/Raven_Hunter_-_Full_Stack_Web_Developer-2.pdf';
+import coverLetterPDF from '../assets/Raven_Hunter_-_Cover_Letter-2.pdf';
+import riceCertificationPDF from '../assets/Rice Cert.pdf';
+import ibmCertificationImage from '../assets/IBM Cert.png';
 
 export default function Resume() {
   const { theme } = useTheme();
@@ -67,15 +69,22 @@ export default function Resume() {
 
   const education = [
     {
-      degree: "Rice University Coding Bootcamp",
+      degree: "Certificate in Full Stack Web Development",
       institution: "Rice University",
       year: "2024-2025",
+      certificate: "https://example.com/rice-certificate.pdf" // <-- replace with actual URL
     },
     {
       degree: "High School Diploma",
       institution: "Bethel High School",
       year: '2008-2012',
     },
+    {
+      degree: "Certificate in Full Stack Web Development",
+      institution: "IBM",
+      year: "2025",
+      certificate: "https://example.com/ibm-certificate.pdf" // <-- replace with actual URL
+    }
   ];
 
   return (
@@ -127,6 +136,16 @@ export default function Resume() {
                 <span className="resume-page__education-institution">{edu.institution}</span>
                 <span className="resume-page__education-year">{edu.year}</span>
               </p>
+              {edu.certificate && (
+                <a
+                  href={edu.certificate}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="resume-page__download-button"
+                >
+                  View Certification
+                </a>
+              )}
             </div>
           ))}
         </section>
