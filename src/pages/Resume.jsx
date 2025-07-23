@@ -69,22 +69,25 @@ export default function Resume() {
 
   const education = [
     {
-      degree: "Certificate in Full Stack Web Development",
-      institution: "Rice University",
-      year: "2024-2025",
-      certificate: "https://example.com/rice-certificate.pdf" // <-- replace with actual URL
+      id: 1,
+      name: 'Certificate in Full Stack Web Development',
+      issuer: 'Rice University',
+      year: '2024-2025',
+      link: riceCertificationPDF,
     },
     {
-      degree: "High School Diploma",
-      institution: "Bethel High School",
+      id: 2,
+      name: 'High School Diploma',
+      issuer: 'Bethel High School',
       year: '2008-2012',
     },
     {
-      degree: "Certificate in Full Stack Web Development",
-      institution: "IBM",
-      year: "2025",
-      certificate: "https://example.com/ibm-certificate.pdf" // <-- replace with actual URL
-    }
+      id: 3,
+      name: 'Certificate in Full Stack Web Development',
+      issuer: 'IBM',
+      year: '2025',
+      link: ibmCertificationImage,
+    },
   ];
 
   return (
@@ -95,6 +98,7 @@ export default function Resume() {
       </header>
 
       <div className="resume-page__content">
+        {/* Skills Section */}
         <section className="resume-page__section resume-page__section--skills">
           <h2 className="resume-page__section-heading">Skills</h2>
           <div className="resume-page__skills-grid">
@@ -113,6 +117,7 @@ export default function Resume() {
           </div>
         </section>
 
+        {/* Experience Section */}
         <section className="resume-page__section resume-page__section--experience">
           <h2 className="resume-page__section-heading">Experience</h2>
           {experience.map((exp, idx) => (
@@ -127,18 +132,19 @@ export default function Resume() {
           ))}
         </section>
 
+        {/* Education Section */}
         <section className="resume-page__section resume-page__section--education">
           <h2 className="resume-page__section-heading">Education</h2>
           {education.map((edu, idx) => (
             <div key={idx} className="resume-page__education-item">
-              <h3 className="resume-page__education-degree">{edu.degree}</h3>
+              <h3 className="resume-page__education-degree">{edu.name}</h3>
               <p className="resume-page__education-institution-year">
-                <span className="resume-page__education-institution">{edu.institution}</span>
+                <span className="resume-page__education-institution">{edu.issuer}</span>
                 <span className="resume-page__education-year">{edu.year}</span>
               </p>
-              {edu.certificate && (
+              {edu.link && (
                 <a
-                  href={edu.certificate}
+                  href={edu.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="resume-page__download-button"
@@ -150,6 +156,7 @@ export default function Resume() {
           ))}
         </section>
 
+        {/* Download Section */}
         <section className="resume-page__section resume-page__section--download">
           <h2 className="resume-page__section-heading">Download</h2>
           <div className="resume-page__download">
